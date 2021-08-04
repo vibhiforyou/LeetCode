@@ -2,6 +2,12 @@ package leetcode.problems.medium.longestPalindromicSubstring;
 
 public class Solution2 {
 
+    //Logic
+    //example     b a b a d
+    //            0 1 2 3 4
+    //            i i+1
+    // For Odd  :: consider ith element at center position and chech left and right same elements and claculate max palindrome substring
+    // For Even ::consider ith ans i+1 element at center position and chech left and right same elements and claculate max palindrome substring
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1)
             return "";
@@ -17,7 +23,7 @@ public class Solution2 {
                 end = i + max / 2;
             }
         }
-        return s.substring(start, end);
+        return s.substring(start, end+1);
     }
 
     public int checkforPalSubstring(String str, int start, int end) {
@@ -33,6 +39,8 @@ public class Solution2 {
 
 class MainClasss {
     public static void main(String args[]) {
-
+        String input = "cbbd";
+        Solution2 solution = new Solution2();
+        System.out.println(solution.longestPalindrome(input));
     }
 }
