@@ -1,9 +1,8 @@
 package leetcode.problems.hard.mergedKSortedList;
 
-import com.sun.source.tree.WhileLoopTree;
-import org.w3c.dom.ls.LSInput;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class ListNode {
     int val;
@@ -35,18 +34,14 @@ class Solution {
         }
         Collections.sort(elementList);
 
-        ListNode head = new ListNode(0,null);
-        ListNode temp=head;
+        ListNode head = new ListNode(0, null);
+        ListNode temp = head;
         for (int i : elementList) {
-            ListNode dummynode= new ListNode(i,null);
-            temp.next=dummynode;
-            temp=temp.next;
+            temp.next = new ListNode(i, null);
+            temp = temp.next;
         }
-
         return head.next;
     }
-
-
 }
 
 class MainClass {
@@ -71,7 +66,5 @@ class MainClass {
             System.out.println(head.val);
             head = head.next;
         }
-
-
     }
 }
