@@ -11,29 +11,27 @@ class Solution {
     public int threeSumClosest(int[] nums, int target) {
         int n = nums.length;
         int diff = Integer.MAX_VALUE;
-        int ans=0;
+        int ans = 0;
         Arrays.sort(nums);
         for (int i = 0; i < n; i++) {
             int l = i + 1;
             int r = n - 1;
 
-
             while (l < r) {
-                int sum = nums[i]+nums[l]+nums[r];
-                if(sum==target){
-                    return nums[i]+nums[l]+nums[r];
+                int sum = nums[i] + nums[l] + nums[r];
+                if (sum == target) {
+                    return nums[i] + nums[l] + nums[r];
                 }
-                if(sum<target){
+                if (sum < target) {
                     l++;
-                }
-                else{
+                } else {
                     r--;
                 }
-                int localDiff=Math.abs(sum-target);
+                int localDiff = Math.abs(sum - target);
 
-                if(localDiff<diff){
-                    diff=localDiff;
-                    ans=sum;
+                if (localDiff < diff) {
+                    diff = localDiff;
+                    ans = sum;
                 }
             }
         }
@@ -45,6 +43,6 @@ class Solution {
 public class Main {
     public static void main(String... args) {
         Solution solution = new Solution();
-        System.out.println(solution.threeSumClosest(new int[]{1,1,-1,-1,3}, -1));
+        System.out.println(solution.threeSumClosest(new int[]{1, 1, -1, -1, 3}, -1));
     }
 }
