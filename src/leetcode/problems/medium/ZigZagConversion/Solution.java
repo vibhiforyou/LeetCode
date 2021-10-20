@@ -11,6 +11,7 @@ public class Solution {
                     str[i][j] = s.charAt(strindex);
                     strindex++;
             }
+
         }
 
 
