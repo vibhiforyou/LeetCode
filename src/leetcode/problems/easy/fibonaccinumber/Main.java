@@ -7,8 +7,6 @@ class Solution {
         }
         return fib(n - 1) + fib(n - 2);
     }
-
-
 }
 
 public class Main {
